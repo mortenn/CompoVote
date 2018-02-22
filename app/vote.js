@@ -8,4 +8,5 @@ angular.module('vote').component(
 
 function Vote($scope)
 {
+	this.compos = [];
 }
