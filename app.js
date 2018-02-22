@@ -12,7 +12,7 @@ angular.module('vote', ['ui.router','ngResource'])
 		function($compile, $state, $urlService, localStorageService)
 		{
 			$compile.debugInfoEnabled(false);
-			$state.state('vote', {url:'/', component:'vote'});
+			$state.state('vote', {url:'/:key', params: {key:null}, component:'vote'});
 			$urlService.rules.otherwise('/');
 		}
 	])
