@@ -20,7 +20,7 @@
 	query('DELETE FROM keys WHERE reference=?', [$reference]);
 	query('INSERT INTO keys (key,reference) VALUES (?,?)', [$key, $reference]);
 
-	$url = sprintf('https://%s/vote.php#!/%s', $domain, urlencode($key));
+	$url = sprintf('https://%s/#!/%s', $domain, urlencode($key));
 	$renderer->setHeight(256);
 	$renderer->setWidth(256);
 	$writer = new \BaconQrCode\Writer($renderer);
