@@ -1,12 +1,13 @@
 angular.module('vote').component(
 	'vote',
 	{
-		controller: ['$scope',Vote],
+		controller: ['$stateParams',Vote],
 		templateUrl: 'view/votes.html'
 	}
 );
 
-function Vote($scope)
+function Vote($stateParams)
 {
+	console.log($stateParams.key);
 	this.compos = [];
 }
