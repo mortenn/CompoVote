@@ -2,7 +2,7 @@
 	$params = explode('/', $_SERVER['PATH_INFO']);
 	$key = base64_encode(hash('sha256', $params[2], true));
 	$url = sprintf('https://%s/vote.php/%s', $params[1], $key);
-	$format = explode('.', $params[3])[0];
+	$format = explode('.', $params[3])[1];
 
 	require_once('BaconQrCode/autoload.php');
 	if($format == 'png')
