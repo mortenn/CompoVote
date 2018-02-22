@@ -15,10 +15,14 @@
 
 	require_once('../sql.php');
 
-	$key = base64_encode(random_bytes(10));
-
-	query('DELETE FROM keys WHERE reference=?', [$reference]);
-	query('INSERT INTO keys (key,reference) VALUES (?,?)', [$key, $reference]);
+	$exists = query('SELECT * FROM keys WHERE reference = ?', [$reference])->fetchObject();
+	if($exists)
+		$key = $exists->key;
+	else
+	{
+		$key = base64_encode(random_bytes(10));
+		query('INSERT INTO keys (key,reference) VALUES (?,?)', [$key, $reference]);
+	}
 
 	$url = sprintf('https://%s/#!/%s', $domain, urlencode($key));
 	$renderer->setHeight(256);
