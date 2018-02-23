@@ -9,7 +9,7 @@ angular.module('vote', ['ui.router','ngResource'])
 	])
 	.config([
 		'$compileProvider', '$stateProvider', '$urlServiceProvider',
-		function($compile, $state, $urlService, localStorageService)
+		function($compile, $state, $urlService)
 		{
 			$compile.debugInfoEnabled(false);
 			$state.state('vote', {url:'/:key', params: {key:null}, component:'vote'});
