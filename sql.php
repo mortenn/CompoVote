@@ -14,5 +14,4 @@
 		$prepared = $db->prepare($sql);
 		$prepared->execute($param);
 		$prepared->closeCursor();
-		$db->commit();
 	}
