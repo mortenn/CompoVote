@@ -28,7 +28,7 @@
 
 		case 'vote':
 			$ip = $_SERVER['REMOTE_ADDR'];
-			if($_SERVER['REQUEST_METHOD'] == 'PUT')
+			if(count($params) == 4)
 			{
 				$check = query(
 					'SELECT contest, name FROM entries WHERE contest=? AND name=?',

@@ -19,6 +19,6 @@ function Vote($stateParams, API)
 	};
 	this.Vote = function(contest, entry)
 	{
-		this.votes[contest.name] = API.SetVote({},{contest:contest.name,entry:entry.name});
+		this.votes[contest.name] = API.SetVote({contest:contest.name,entry:entry.name});
 	};
 }
