@@ -51,6 +51,7 @@
 				'SELECT contest,entry FROM votes WHERE contest=? AND client=?',
 				[$params[2], $ip]
 			)->fetchObject();
+			error_log(serialize($response));
 			break;
 
 		default:
