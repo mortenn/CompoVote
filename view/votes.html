@@ -1,5 +1,13 @@
-<div class="card" ng-show="$ctrl.compos.length == 0">
+<div class="card" ng-show="$ctrl.contests.length == 0">
 	<div class="card-body">
 		Nothing to vote for at this time.
+	</div>
+</div>
+<div class="card" ng-repeat="contest in $ctrl.contests">
+	<div class="card-header">
+		<h5 class="card-title">{{contest.name}}</h5>
+	</div>
+	<div class="card-body" ng-if="$ctrl.entries[contest.name].length > 0">
+		{{$ctrl.entries[contest.name]|json}}
 	</div>
 </div>
