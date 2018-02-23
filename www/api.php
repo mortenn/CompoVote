@@ -44,9 +44,11 @@
 				$entry = $check[0];
 				error_log(serialize($entry));
 				$t = query('DELETE FROM votes WHERE contest=? AND client=?',[$entry->contest, $ip]);
-				error_log(serialize($t));
+				error_log($t->errorCode());
+				error_log(serialize($t->errorInfo()));
 				$t = query('INSERT INTO votes (contest,client,entry) VALUES (?,?,?)',[$entry->contest, $ip, $entry->name]);
-				error_log(serialize($t));
+				error_log($t->errorCode());
+				error_log(serialize($t->errorInfo()));
 				error_log('done..');
 			}
 			$response = query(
