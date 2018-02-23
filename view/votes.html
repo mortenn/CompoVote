@@ -9,7 +9,7 @@
 			<h5 class="card-title">{{contest.name}}</h5>
 		</div>
 		<ul class="list-group list-group-flush" ng-if="$ctrl.entries[contest.name].length > 0">
-			<li ng-repeat="entry in $ctrl.entries[contest.name]" class="list-group-item" ng-click="$ctrtl.Vote(contest,entry)">
+			<li ng-repeat="entry in $ctrl.entries[contest.name]" class="list-group-item" ng-click="$ctrl.Vote(contest,entry)">
 				<span class="pull-right">
 					<i class="fa" ng-class="{'fa-check':$ctrl.votes[contest.name].entry==entry.name}"></i>
 				</span>
