@@ -8,8 +8,10 @@
 		<div class="card-header" style="cursor: pointer;" ng-click="$ctrl.ExpandContest(contest)">
 			<h5 class="card-title">{{contest.name}}</h5>
 		</div>
-		<div class="card-body" ng-if="$ctrl.entries[contest.name].length > 0">
-			{{$ctrl.entries[contest.name]|json}}
-		</div>
+		<ul class="list-group list-group-flush" ng-if="$ctrl.entries[contest.name].length > 0">
+			<li ng-repeat="entry in $ctrl.entries[contest.name]">
+				{{entry.name}} by {{entry.contestant}}
+			</li>
+		</ul>
 	</div>
 </div>
