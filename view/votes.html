@@ -4,7 +4,7 @@
 	</div>
 </div>
 <div class="card" ng-repeat="contest in $ctrl.contests">
-	<div class="card-header">
+	<div class="card-header" style="cursor: pointer;" ng-click="$ctrl.ExpandContest(contest)">
 		<h5 class="card-title">{{contest.name}}</h5>
 	</div>
 	<div class="card-body" ng-if="$ctrl.entries[contest.name].length > 0">
