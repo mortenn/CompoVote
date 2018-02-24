@@ -2,7 +2,7 @@
 	if($_SERVER['REQUEST_METHOD'] == 'OPTIONS')
 		die();
 
-	$params = explode('/', $_SERVER['PATH_INFO']);
+	$params = explode('/', urldecode($_SERVER['PATH_INFO']));
 	if(count($params) < 2)
 	{
 		header('HTTP/1.0 400 Bad Request');
